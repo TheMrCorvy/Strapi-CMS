@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "events",
+  "info": {
+    "singularName": "event",
+    "pluralName": "events",
+    "displayName": "Event"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "description": {
+      "type": "richtext",
+      "maxLength": 500,
+      "minLength": 15
+    },
+    "date": {
+      "type": "string",
+      "maxLength": 200,
+      "minLength": 15
+    },
+    "time": {
+      "type": "string",
+      "maxLength": 10,
+      "minLength": 6
+    }
+  }
+}

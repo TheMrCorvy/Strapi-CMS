@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "book_pages",
+  "info": {
+    "singularName": "book-page",
+    "pluralName": "book-pages",
+    "displayName": "Book Page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "content": {
+      "type": "richtext",
+      "required": true,
+      "minLength": 160
+    },
+    "estimated_duration": {
+      "type": "decimal"
+    },
+    "background_scene": {
+      "type": "string",
+      "default": "default",
+      "required": true
+    },
+    "was_deleted": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    }
+  }
+}

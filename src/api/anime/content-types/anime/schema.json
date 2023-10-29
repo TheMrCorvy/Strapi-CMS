@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "animes",
+  "info": {
+    "singularName": "anime",
+    "pluralName": "animes",
+    "displayName": "Anime"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "position": {
+      "type": "integer"
+    },
+    "name": {
+      "type": "string"
+    },
+    "date": {
+      "type": "text"
+    },
+    "description": {
+      "type": "text"
+    },
+    "disk": {
+      "type": "integer"
+    },
+    "has_conclusion": {
+      "type": "boolean"
+    },
+    "jurisdiction": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::jurisdiction.jurisdiction",
+      "mappedBy": "anime"
+    }
+  }
+}

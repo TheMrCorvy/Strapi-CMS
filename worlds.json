@@ -1,24 +1,6 @@
 {
 	"data": [
 		{
-			"godInCharge": "Zeno-sama",
-			"status": 0,
-			"description": "",
-			"jurisdiction": [
-				{
-					"universe": 1,
-					"bubble": [
-						{
-							"franchise": "Dragon Ball Super",
-							"position": 7,
-							"positionInTimeline": 1,
-							"original": 1
-						}
-					]
-				}
-			]
-		},
-		{
 			"godInCharge": "Suzuha",
 			"status": 1,
 			"description": "",

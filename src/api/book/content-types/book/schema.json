@@ -1,46 +1,46 @@
 {
-  "kind": "collectionType",
-  "collectionName": "books",
-  "info": {
-    "singularName": "book",
-    "pluralName": "books",
-    "displayName": "Book",
-    "description": ""
-  },
-  "options": {
-    "draftAndPublish": true
-  },
-  "pluginOptions": {},
-  "attributes": {
-    "title": {
-      "type": "string",
-      "required": true,
-      "minLength": 2,
-      "maxLength": 160
-    },
-    "author": {
-      "type": "string",
-      "required": true,
-      "minLength": 1,
-      "maxLength": 160
-    },
-    "description": {
-      "type": "richtext",
-      "minLength": 10
-    },
-    "position_in_timeline": {
-      "default": 1,
-      "type": "integer"
-    },
-    "was_deleted": {
-      "type": "boolean",
-      "default": false,
-      "required": true
-    },
-    "book_pages": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::book-page.book-page"
-    }
-  }
+	"kind": "collectionType",
+	"collectionName": "books",
+	"info": {
+		"singularName": "book",
+		"pluralName": "books",
+		"displayName": "D - Book",
+		"description": ""
+	},
+	"options": {
+		"draftAndPublish": true
+	},
+	"pluginOptions": {},
+	"attributes": {
+		"title": {
+			"type": "string",
+			"required": true,
+			"minLength": 2,
+			"maxLength": 160
+		},
+		"author": {
+			"type": "string",
+			"required": true,
+			"minLength": 1,
+			"maxLength": 160
+		},
+		"description": {
+			"type": "richtext",
+			"minLength": 10
+		},
+		"position_in_timeline": {
+			"default": 1,
+			"type": "integer"
+		},
+		"was_deleted": {
+			"type": "boolean",
+			"default": false,
+			"required": true
+		},
+		"book_pages": {
+			"type": "relation",
+			"relation": "oneToMany",
+			"target": "api::book-page.book-page"
+		}
+	}
 }

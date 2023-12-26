@@ -1,30 +1,30 @@
 {
-  "kind": "collectionType",
-  "collectionName": "worlds",
-  "info": {
-    "singularName": "world",
-    "pluralName": "worlds",
-    "displayName": "World",
-    "description": ""
-  },
-  "options": {
-    "draftAndPublish": true
-  },
-  "pluginOptions": {},
-  "attributes": {
-    "name": {
-      "type": "string",
-      "minLength": 1,
-      "maxLength": 130
-    },
-    "description": {
-      "type": "richtext",
-      "minLength": 10
-    },
-    "time_lines": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::time-line.time-line"
-    }
-  }
+	"kind": "collectionType",
+	"collectionName": "worlds",
+	"info": {
+		"singularName": "world",
+		"pluralName": "worlds",
+		"displayName": "D - World",
+		"description": ""
+	},
+	"options": {
+		"draftAndPublish": true
+	},
+	"pluginOptions": {},
+	"attributes": {
+		"name": {
+			"type": "string",
+			"minLength": 1,
+			"maxLength": 130
+		},
+		"description": {
+			"type": "richtext",
+			"minLength": 10
+		},
+		"time_lines": {
+			"type": "relation",
+			"relation": "oneToMany",
+			"target": "api::time-line.time-line"
+		}
+	}
 }

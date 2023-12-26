@@ -1,0 +1,530 @@
+{
+	"data": [
+		{
+			"godInCharge": "Zeno-sama",
+			"status": 0,
+			"description": "",
+			"jurisdiction": [
+				{
+					"universe": 1,
+					"bubble": [
+						{
+							"franchise": "Dragon Ball Super",
+							"position": 7,
+							"positionInTimeline": 1,
+							"original": 1
+						}
+					]
+				}
+			]
+		},
+		{
+			"godInCharge": "Suzuha",
+			"status": 1,
+			"description": "",
+			"jurisdiction": [
+				{
+					"universe": 1,
+					"bubble": [
+						{
+							"franchise": "Steins;Gate y Steins;Gate 0",
+							"position": 44,
+							"positionInTimeline": 2,
+							"original": 1
+						},
+						{
+							"franchise": "ToraDora!",
+							"position": 23,
+							"positionInTimeline": 1,
+							"original": 0
+						},
+						{
+							"franchise": "Ookami-San To Shichinin No Nakama-Tachi",
+							"position": 47,
+							"positionInTimeline": 3,
+							"original": 0
+						},
+						{
+							"franchise": "Robotic;Notes",
+							"position": 191,
+							"positionInTimeline": 5,
+							"original": 0
+						}
+					]
+				},
+				{
+					"universe": 2,
+					"bubble": [
+						{
+							"franchise": "Occultic;Nine",
+							"position": 92,
+							"positionInTimeline": 1,
+							"original": 0
+						}
+					]
+				}
+			]
+		},
+		{
+			"godInCharge": "Yo.",
+			"status": 1,
+			"description": "",
+			"jurisdiction": [
+				{
+					"universe": 3,
+					"bubble": [
+						{
+							"franchise": "Kono Subarashii Sekai Ni Shukufuku Wo!",
+							"position": 14,
+							"positionInTimeline": 1,
+							"original": 0
+						},
+						{
+							"franchise": "Shinchou Yuusha Kono Yuusha Ga Ore Tueee Kuse Ni Shinchou Sugiru",
+							"position": 184,
+							"positionInTimeline": 2,
+							"original": 0
+						}
+					]
+				},
+				{
+					"universe": 2,
+					"bubble": [
+						{
+							"franchise": "Chuunibyou Demo Koi Ga Shitai!",
+							"position": 26,
+							"positionInTimeline": 3,
+							"original": 0
+						},
+						{
+							"franchise": "Tamako Market",
+							"position": 45,
+							"positionInTimeline": 4,
+							"original": 0
+						},
+						{
+							"franchise": "K-On!",
+							"position": 76,
+							"positionInTimeline": 2,
+							"original": 0
+						},
+						{
+							"franchise": "Kokoro Connect",
+							"position": 97,
+							"positionInTimeline": 5,
+							"original": 1
+						},
+						{
+							"franchise": "Hyouka",
+							"position": 124,
+							"positionInTimeline": 5,
+							"original": 0
+						}
+					]
+				},
+				{
+					"universe": 1,
+					"bubble": [
+						{
+							"franchise": "Youjo Senki",
+							"position": 39,
+							"positionInTimeline": 1,
+							"original": 1
+						},
+						{
+							"franchise": "Kimi No Na Wa",
+							"position": 0,
+							"positionInTimeline": 2,
+							"original": 0
+						},
+						{
+							"franchise": "Kyoukai No Kanata",
+							"position": 121,
+							"positionInTimeline": 3,
+							"original": 0
+						}
+					]
+				},
+				{
+					"universe": 6,
+					"bubble": [
+						{
+							"franchise": "FATE",
+							"position": 6,
+							"positionInTimeline": 1,
+							"original": 0
+						}
+					]
+				},
+				{
+					"universe": 7,
+					"bubble": [
+						{
+							"franchise": "Isekai Quartet",
+							"position": 6,
+							"positionInTimeline": 1,
+							"original": 0
+						}
+					]
+				},
+				{
+					"universe": 4,
+					"bubble": [
+						{
+							"franchise": "Overlord",
+							"position": 126,
+							"positionInTimeline": 1,
+							"original": 0
+						}
+					]
+				},
+				{
+					"universe": 5,
+					"bubble": [
+						{
+							"franchise": "Re-Zero",
+							"position": 0,
+							"description": "No lo voy a ver",
+							"positionInTimeline": 1,
+							"original": 0
+						}
+					]
+				}
+			]
+		},
+		{
+			"godInCharge": "Anos Voldigoad (El Rey Demonio)",
+			"status": "1",
+			"description": "Le asigno este mundo a Anos así no me queda sin una Deidad Regente.",
+			"jurisdiction": [
+				{
+					"universe": 1,
+					"bubble": [
+						{
+							"franchise": "kobayashi-san chi no maid dragon",
+							"position": 28,
+							"positionInTimeline": 2,
+							"original": 0
+						},
+						{
+							"franchise": "Karakai Jouzu no Takagi-san",
+							"position": 93,
+							"positionInTimeline": 1,
+							"original": 0
+						},
+						{
+							"franchise": "Sewayaki Kitsune No Senko-san",
+							"position": 137,
+							"positionInTimeline": 3,
+							"original": 0
+						}
+					]
+				},
+				{
+					"universe": 2,
+					"bubble": [
+						{
+							"franchise": "Tensei Shitara Slime Datta Ken",
+							"position": 130,
+							"positionInTimeline": 1,
+							"original": 0
+						},
+						{
+							"franchise": "Gate: Jieitai Kanochi Nite, Kaku Tatakaeri",
+							"position": 155,
+							"positionInTimeline": 2,
+							"original": 0
+						}
+					]
+				},
+				{
+					"universe": 3,
+					"bubble": [
+						{
+							"franchise": "Tate No Yuusha No Nariagari",
+							"position": 135,
+							"positionInTimeline": 1,
+							"original": 0
+						}
+					]
+				},
+				{
+					"universe": 4,
+					"bubble": [
+						{
+							"franchise": "Maou Gakuin no Futekigousha",
+							"position": 175,
+							"positionInTimeline": 1,
+							"original": 1
+						}
+					]
+				}
+			]
+		},
+		{
+			"godInCharge": "Altair y Setsuna",
+			"status": "1",
+			"description": "",
+			"jurisdiction": [
+				{
+					"universe": 1,
+					"bubble": [
+						{
+							"franchise": "shirobako",
+							"position": 29,
+							"positionInTimeline": 2,
+							"original": 0
+						},
+						{
+							"franchise": "Re:Creators",
+							"position": 38,
+							"positionInTimeline": 3,
+							"original": 1
+						},
+						{
+							"franchise": "Bakuman!",
+							"position": 41,
+							"positionInTimeline": 1,
+							"original": 0
+						},
+						{
+							"franchise": "Kiznaiver",
+							"position": 103,
+							"positionInTimeline": 4,
+							"original": 0
+						},
+						{
+							"franchise": "Rail Wars",
+							"position": 108,
+							"description": "Es un anime dentro del mundo de Shirobako / Re:creators.",
+							"positionInTimeline": 2.1,
+							"original": 0
+						},
+						{
+							"franchise": "Irozuku Sekai No Ashita Kara",
+							"position": 114,
+							"positionInTimeline": 5,
+							"original": 0
+						},
+						{
+							"franchise": "Girly Air Force",
+							"position": 129,
+							"description": "Es un anime dentro del mundo de Shirobako / Re:creators.",
+							"positionInTimeline": 2.2,
+							"original": 0
+						}
+					]
+				}
+			]
+		},
+		{
+			"godInCharge": "Mercurius (el mago) y Reinhard (el rubio)",
+			"status": "0",
+			"description": "Ambos fueron dioses temporales para poner a prueba la seguridad del multiverso, y después los borré.",
+			"jurisdiction": [
+				{
+					"universe": 1,
+					"bubble": [
+						{
+							"franchise": "Dies Irae",
+							"position": 59,
+							"positionInTimeline": 1,
+							"original": 1
+						}
+					]
+				}
+			]
+		},
+		{
+			"godInCharge": "Nona",
+			"status": "1",
+			"description": "",
+			"jurisdiction": [
+				{
+					"universe": 1,
+					"bubble": [
+						{
+							"franchise": "Death Parade",
+							"position": 66,
+							"positionInTimeline": 1,
+							"original": 1
+						},
+						{
+							"franchise": "Little Witch Academy",
+							"position": 68,
+							"positionInTimeline": 2,
+							"original": 0
+						},
+						{
+							"franchise": "Arve Rezzle: Kikaijikake no Yoseitachi",
+							"position": 67,
+							"positionInTimeline": 3,
+							"original": 0
+						}
+					]
+				}
+			]
+		},
+		{
+			"godInCharge": "Enma Ai",
+			"status": "1",
+			"description": "",
+			"jurisdiction": [
+				{
+					"universe": 1,
+					"bubble": [
+						{
+							"franchise": "YurYuri",
+							"position": 73,
+							"positionInTimeline": 2,
+							"original": 0
+						},
+						{
+							"franchise": "Jigoku Shoujo",
+							"position": 87,
+							"positionInTimeline": 1,
+							"original": 1
+						},
+						{
+							"franchise": "Ghost Hound",
+							"position": 88,
+							"positionInTimeline": 1.1,
+							"original": 0
+						},
+						{
+							"franchise": "Nichijou",
+							"position": 90,
+							"positionInTimeline": 4,
+							"original": 0
+						},
+						{
+							"franchise": "Joshiraku",
+							"position": 128,
+							"positionInTimeline": 3,
+							"original": 0
+						},
+						{
+							"franchise": "Ghost Hunt",
+							"position": 177,
+							"positionInTimeline": 1.2,
+							"original": 0
+						},
+						{
+							"franchise": "Gakkou no Kaidan",
+							"position": 178,
+							"positionInTimeline": 1.3,
+							"original": 0
+						}
+					]
+				}
+			]
+		},
+		{
+			"godInCharge": "Kanade",
+			"status": "1",
+			"description": "Kanade quedó como gobernante, mientras que Otonashi y los demás sirven como \"Policía\".",
+			"jurisdiction": [
+				{
+					"universe": 2,
+					"bubble": [
+						{
+							"franchise": "Gabriel DropOut",
+							"position": 20,
+							"positionInTimeline": 1,
+							"original": 0
+						}
+					]
+				},
+				{
+					"universe": 1,
+					"bubble": [
+						{
+							"franchise": "Angel Beats!",
+							"position": 82,
+							"positionInTimeline": 1,
+							"original": 1
+						}
+					]
+				}
+			]
+		},
+		{
+			"godInCharge": "Madoka",
+			"status": "1",
+			"description": "Madoka es la gobernante, y Homura es su opuesto perfecto.",
+			"jurisdiction": [
+				{
+					"universe": 1,
+					"bubble": [
+						{
+							"franchise": "Blend-S",
+							"position": 55,
+							"positionInTimeline": 2,
+							"original": 0
+						},
+						{
+							"franchise": "Mahou Shoujo Madoka Magica",
+							"position": 84,
+							"positionInTimeline": 1,
+							"original": 1
+						},
+						{
+							"franchise": "Mitsuboshi Colors",
+							"position": 89,
+							"positionInTimeline": 3,
+							"original": 0
+						},
+						{
+							"franchise": "Kaguya-sama Love Is War",
+							"position": 118,
+							"positionInTimeline": 4,
+							"original": 0
+						}
+					]
+				}
+			]
+		},
+		{
+			"godInCharge": "Yatogami",
+			"status": "1",
+			"description": "",
+			"jurisdiction": [
+				{
+					"universe": 1,
+					"bubble": [
+						{
+							"franchise": "Net-juu no Susume",
+							"position": 54,
+							"positionInTimeline": 2,
+							"original": 0
+						},
+						{
+							"franchise": "Osake wa Fuufu ni Natte kara?",
+							"position": 62,
+							"positionInTimeline": 1,
+							"original": 0
+						},
+						{
+							"franchise": "Sousei No Onmyouji",
+							"position": 69,
+							"positionInTimeline": 5,
+							"original": 0
+						},
+						{
+							"franchise": "Uchouten Kazoku",
+							"position": 164,
+							"positionInTimeline": 4,
+							"original": 0
+						},
+						{
+							"franchise": "Noragami",
+							"position": 187,
+							"positionInTimeline": 3,
+							"original": 1
+						}
+					]
+				}
+			]
+		}
+	]
+}

@@ -1,33 +1,34 @@
 {
-  "kind": "collectionType",
-  "collectionName": "animes",
-  "info": {
-    "singularName": "anime",
-    "pluralName": "animes",
-    "displayName": "Anime"
-  },
-  "options": {
-    "draftAndPublish": false
-  },
-  "pluginOptions": {},
-  "attributes": {
-    "position": {
-      "type": "integer"
-    },
-    "name": {
-      "type": "string"
-    },
-    "date": {
-      "type": "text"
-    },
-    "description": {
-      "type": "text"
-    },
-    "disk": {
-      "type": "integer"
-    },
-    "has_conclusion": {
-      "type": "boolean"
-    }
-  }
+	"kind": "collectionType",
+	"collectionName": "animes",
+	"info": {
+		"singularName": "anime",
+		"pluralName": "animes",
+		"displayName": "P - Anime",
+		"description": ""
+	},
+	"options": {
+		"draftAndPublish": false
+	},
+	"pluginOptions": {},
+	"attributes": {
+		"position": {
+			"type": "integer"
+		},
+		"name": {
+			"type": "string"
+		},
+		"date": {
+			"type": "text"
+		},
+		"description": {
+			"type": "text"
+		},
+		"disk": {
+			"type": "integer"
+		},
+		"has_conclusion": {
+			"type": "boolean"
+		}
+	}
 }

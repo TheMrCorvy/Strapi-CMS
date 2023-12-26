@@ -1,46 +1,46 @@
 {
-  "kind": "collectionType",
-  "collectionName": "time_lines",
-  "info": {
-    "singularName": "time-line",
-    "pluralName": "time-lines",
-    "displayName": "Time Line",
-    "description": ""
-  },
-  "options": {
-    "draftAndPublish": true
-  },
-  "pluginOptions": {},
-  "attributes": {
-    "name": {
-      "type": "string",
-      "required": false,
-      "maxLength": 160,
-      "minLength": 1
-    },
-    "description": {
-      "type": "richtext",
-      "minLength": 1
-    },
-    "start": {
-      "type": "string",
-      "minLength": 2,
-      "maxLength": 200
-    },
-    "end": {
-      "type": "string",
-      "minLength": 1,
-      "maxLength": 200
-    },
-    "books": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::book.book"
-    },
-    "events": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::event.event"
-    }
-  }
+	"kind": "collectionType",
+	"collectionName": "time_lines",
+	"info": {
+		"singularName": "time-line",
+		"pluralName": "time-lines",
+		"displayName": "D - Time Line",
+		"description": ""
+	},
+	"options": {
+		"draftAndPublish": true
+	},
+	"pluginOptions": {},
+	"attributes": {
+		"name": {
+			"type": "string",
+			"required": false,
+			"maxLength": 160,
+			"minLength": 1
+		},
+		"description": {
+			"type": "richtext",
+			"minLength": 1
+		},
+		"start": {
+			"type": "string",
+			"minLength": 2,
+			"maxLength": 200
+		},
+		"end": {
+			"type": "string",
+			"minLength": 1,
+			"maxLength": 200
+		},
+		"books": {
+			"type": "relation",
+			"relation": "oneToMany",
+			"target": "api::book.book"
+		},
+		"events": {
+			"type": "relation",
+			"relation": "oneToMany",
+			"target": "api::event.event"
+		}
+	}
 }

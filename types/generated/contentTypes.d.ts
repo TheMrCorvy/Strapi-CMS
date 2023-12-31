@@ -768,14 +768,19 @@ export interface ApiBubbleBubble extends Schema.CollectionType {
 		singularName: "bubble"
 		pluralName: "bubbles"
 		displayName: "P - Bubble"
-		description: ""
 	}
 	options: {
 		draftAndPublish: false
 	}
 	attributes: {
-		universe: Attribute.Integer & Attribute.Required
-		bubble: Attribute.Relation<"api::bubble.bubble", "oneToMany", "api::franchise.franchise">
+		display_name: Attribute.String & Attribute.Required & Attribute.Private
+		universe: Attribute.Integer
+		franchises: Attribute.Relation<
+			"api::bubble.bubble",
+			"oneToMany",
+			"api::franchise.franchise"
+		>
+		description: Attribute.RichText
 		createdAt: Attribute.DateTime
 		updatedAt: Attribute.DateTime
 		createdBy: Attribute.Relation<"api::bubble.bubble", "oneToOne", "admin::user"> &
@@ -827,14 +832,14 @@ export interface ApiFranchiseFranchise extends Schema.CollectionType {
 		singularName: "franchise"
 		pluralName: "franchises"
 		displayName: "P - Franchise"
-		description: ""
 	}
 	options: {
 		draftAndPublish: false
 	}
 	attributes: {
-		position_in_timeline: Attribute.Float & Attribute.Required
-		original: Attribute.Boolean & Attribute.Required
+		display_name: Attribute.String & Attribute.Required & Attribute.Private & Attribute.Unique
+		position_in_timeline: Attribute.Float
+		original: Attribute.Boolean
 		anime: Attribute.Relation<"api::franchise.franchise", "oneToOne", "api::anime.anime">
 		createdAt: Attribute.DateTime
 		updatedAt: Attribute.DateTime
@@ -850,7 +855,7 @@ export interface ApiJurisdictionJurisdiction extends Schema.CollectionType {
 	info: {
 		singularName: "jurisdiction"
 		pluralName: "jurisdictions"
-		displayName: "P - Jurisdiction"
+		displayName: "P - Universe"
 		description: ""
 	}
 	options: {
@@ -860,7 +865,7 @@ export interface ApiJurisdictionJurisdiction extends Schema.CollectionType {
 		god_in_charge: Attribute.String & Attribute.Required
 		status: Attribute.Boolean & Attribute.Required
 		description: Attribute.RichText
-		jurisdictions: Attribute.Relation<
+		jurisdiction: Attribute.Relation<
 			"api::jurisdiction.jurisdiction",
 			"oneToMany",
 			"api::bubble.bubble"

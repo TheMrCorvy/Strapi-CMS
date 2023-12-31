@@ -4,21 +4,24 @@
   "info": {
     "singularName": "franchise",
     "pluralName": "franchises",
-    "displayName": "P - Franchise",
-    "description": ""
+    "displayName": "P - Franchise"
   },
   "options": {
     "draftAndPublish": false
   },
   "pluginOptions": {},
   "attributes": {
+    "display_name": {
+      "type": "string",
+      "required": true,
+      "unique": true,
+      "private": true
+    },
     "position_in_timeline": {
-      "type": "float",
-      "required": true
+      "type": "float"
     },
     "original": {
-      "type": "boolean",
-      "required": true
+      "type": "boolean"
     },
     "anime": {
       "type": "relation",

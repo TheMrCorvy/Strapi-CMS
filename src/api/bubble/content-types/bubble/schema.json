@@ -4,22 +4,28 @@
   "info": {
     "singularName": "bubble",
     "pluralName": "bubbles",
-    "displayName": "P - Bubble",
-    "description": ""
+    "displayName": "P - Bubble"
   },
   "options": {
     "draftAndPublish": false
   },
   "pluginOptions": {},
   "attributes": {
-    "universe": {
-      "type": "integer",
-      "required": true
+    "display_name": {
+      "type": "string",
+      "required": true,
+      "private": true
     },
-    "bubble": {
+    "universe": {
+      "type": "integer"
+    },
+    "franchises": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::franchise.franchise"
+    },
+    "description": {
+      "type": "richtext"
     }
   }
 }

@@ -4,7 +4,7 @@
   "info": {
     "singularName": "jurisdiction",
     "pluralName": "jurisdictions",
-    "displayName": "P - Jurisdiction",
+    "displayName": "P - Universe",
     "description": ""
   },
   "options": {
@@ -23,7 +23,7 @@
     "description": {
       "type": "richtext"
     },
-    "jurisdictions": {
+    "jurisdiction": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::bubble.bubble"

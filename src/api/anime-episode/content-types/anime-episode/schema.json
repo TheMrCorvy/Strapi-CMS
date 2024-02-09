@@ -20,12 +20,9 @@
       "type": "string",
       "required": true
     },
-    "sub_directories": {
-      "type": "json"
-    },
-    "adult": {
-      "type": "boolean",
-      "default": false
+    "parent_directory_path": {
+      "type": "string",
+      "required": true
     }
   }
 }

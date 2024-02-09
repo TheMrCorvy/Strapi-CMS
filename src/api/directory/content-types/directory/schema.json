@@ -4,7 +4,8 @@
   "info": {
     "singularName": "directory",
     "pluralName": "directories",
-    "displayName": "B - Directory"
+    "displayName": "B - Directory",
+    "description": ""
   },
   "options": {
     "draftAndPublish": false
@@ -23,6 +24,16 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::anime-episode.anime-episode"
+    },
+    "adult": {
+      "type": "boolean",
+      "default": false
+    },
+    "sub_directories_paths": {
+      "type": "json"
+    },
+    "parent_directory_path": {
+      "type": "string"
     }
   }
 }

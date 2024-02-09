@@ -834,8 +834,7 @@ export interface ApiAnimeEpisodeAnimeEpisode extends Schema.CollectionType {
   attributes: {
     display_name: Attribute.String & Attribute.Required;
     file_path: Attribute.String & Attribute.Required;
-    sub_directories: Attribute.JSON;
-    adult: Attribute.Boolean & Attribute.DefaultTo<false>;
+    parent_directory_path: Attribute.String & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -984,6 +983,7 @@ export interface ApiDirectoryDirectory extends Schema.CollectionType {
     singularName: 'directory';
     pluralName: 'directories';
     displayName: 'B - Directory';
+    description: '';
   };
   options: {
     draftAndPublish: false;
@@ -996,6 +996,9 @@ export interface ApiDirectoryDirectory extends Schema.CollectionType {
       'oneToMany',
       'api::anime-episode.anime-episode'
     >;
+    adult: Attribute.Boolean & Attribute.DefaultTo<false>;
+    sub_directories_paths: Attribute.JSON;
+    parent_directory_path: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<

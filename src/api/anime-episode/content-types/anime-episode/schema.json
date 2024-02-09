@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "anime_episodes",
+  "info": {
+    "singularName": "anime-episode",
+    "pluralName": "anime-episodes",
+    "displayName": "B - Anime Episode",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "display_name": {
+      "type": "string",
+      "required": true
+    },
+    "file_path": {
+      "type": "string",
+      "required": true
+    },
+    "sub_directories": {
+      "type": "json"
+    }
+  }
+}

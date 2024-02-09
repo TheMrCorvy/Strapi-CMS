@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "directories",
+  "info": {
+    "singularName": "directory",
+    "pluralName": "directories",
+    "displayName": "B - Directory"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "display_name": {
+      "type": "string",
+      "required": true
+    },
+    "directory_path": {
+      "type": "string",
+      "required": true
+    },
+    "anime_episodes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::anime-episode.anime-episode"
+    }
+  }
+}

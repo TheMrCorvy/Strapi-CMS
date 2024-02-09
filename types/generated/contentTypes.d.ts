@@ -820,6 +820,38 @@ export interface ApiAnimeAnime extends Schema.CollectionType {
   };
 }
 
+export interface ApiAnimeEpisodeAnimeEpisode extends Schema.CollectionType {
+  collectionName: 'anime_episodes';
+  info: {
+    singularName: 'anime-episode';
+    pluralName: 'anime-episodes';
+    displayName: 'B - Anime Episode';
+    description: '';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    display_name: Attribute.String & Attribute.Required;
+    file_path: Attribute.String & Attribute.Required;
+    sub_directories: Attribute.JSON;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::anime-episode.anime-episode',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::anime-episode.anime-episode',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiBookBook extends Schema.CollectionType {
   collectionName: 'books';
   info: {
@@ -938,6 +970,41 @@ export interface ApiBubbleBubble extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::bubble.bubble',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiDirectoryDirectory extends Schema.CollectionType {
+  collectionName: 'directories';
+  info: {
+    singularName: 'directory';
+    pluralName: 'directories';
+    displayName: 'B - Directory';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    display_name: Attribute.String & Attribute.Required;
+    directory_path: Attribute.String & Attribute.Required;
+    anime_episodes: Attribute.Relation<
+      'api::directory.directory',
+      'oneToMany',
+      'api::anime-episode.anime-episode'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::directory.directory',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::directory.directory',
       'oneToOne',
       'admin::user'
     > &
@@ -1187,9 +1254,11 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::anime.anime': ApiAnimeAnime;
+      'api::anime-episode.anime-episode': ApiAnimeEpisodeAnimeEpisode;
       'api::book.book': ApiBookBook;
       'api::book-page.book-page': ApiBookPageBookPage;
       'api::bubble.bubble': ApiBubbleBubble;
+      'api::directory.directory': ApiDirectoryDirectory;
       'api::event.event': ApiEventEvent;
       'api::franchise.franchise': ApiFranchiseFranchise;
       'api::jurisdiction.jurisdiction': ApiJurisdictionJurisdiction;

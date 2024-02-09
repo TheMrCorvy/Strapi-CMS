@@ -835,6 +835,7 @@ export interface ApiAnimeEpisodeAnimeEpisode extends Schema.CollectionType {
     display_name: Attribute.String & Attribute.Required;
     file_path: Attribute.String & Attribute.Required;
     sub_directories: Attribute.JSON;
+    adult: Attribute.Boolean & Attribute.DefaultTo<false>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<

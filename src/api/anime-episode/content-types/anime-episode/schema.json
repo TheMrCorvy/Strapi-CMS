@@ -22,6 +22,10 @@
     },
     "sub_directories": {
       "type": "json"
+    },
+    "adult": {
+      "type": "boolean",
+      "default": false
     }
   }
 }

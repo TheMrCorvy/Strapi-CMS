@@ -25,7 +25,7 @@
       "relation": "oneToMany",
       "target": "api::anime-episode.anime-episode"
     },
-    "adult": {
+    "is_complete": {
       "type": "boolean",
       "default": false
     },

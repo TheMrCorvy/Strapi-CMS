@@ -1136,6 +1136,36 @@ export interface ApiJurisdictionJurisdiction extends Schema.CollectionType {
   };
 }
 
+export interface ApiRegisterTokenRegisterToken extends Schema.CollectionType {
+  collectionName: 'register_tokens';
+  info: {
+    singularName: 'register-token';
+    pluralName: 'register-tokens';
+    displayName: 'B - Register Token';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    Token: Attribute.String & Attribute.Required;
+    User: Attribute.String & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::register-token.register-token',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::register-token.register-token',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiTimeLineTimeLine extends Schema.CollectionType {
   collectionName: 'time_lines';
   info: {
@@ -1266,6 +1296,7 @@ declare module '@strapi/types' {
       'api::event.event': ApiEventEvent;
       'api::franchise.franchise': ApiFranchiseFranchise;
       'api::jurisdiction.jurisdiction': ApiJurisdictionJurisdiction;
+      'api::register-token.register-token': ApiRegisterTokenRegisterToken;
       'api::time-line.time-line': ApiTimeLineTimeLine;
       'api::world.world': ApiWorldWorld;
     }

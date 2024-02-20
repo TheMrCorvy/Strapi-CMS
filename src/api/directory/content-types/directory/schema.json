@@ -25,15 +25,19 @@
       "relation": "oneToMany",
       "target": "api::anime-episode.anime-episode"
     },
-    "is_complete": {
+    "adult": {
       "type": "boolean",
       "default": false
     },
-    "sub_directories_paths": {
-      "type": "json"
+    "parent_directory": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::directory.directory"
     },
-    "parent_directory_path": {
-      "type": "string"
+    "sub_directories": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::directory.directory"
     }
   }
 }

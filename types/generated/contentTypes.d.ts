@@ -801,7 +801,6 @@ export interface ApiAnimeAnime extends Schema.CollectionType {
     name: Attribute.String;
     date: Attribute.Text;
     description: Attribute.Text;
-    disk: Attribute.Integer;
     has_conclusion: Attribute.Boolean;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;

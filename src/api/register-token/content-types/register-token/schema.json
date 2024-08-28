@@ -4,19 +4,25 @@
   "info": {
     "singularName": "register-token",
     "pluralName": "register-tokens",
-    "displayName": "B - Register Token"
+    "displayName": "B - Register Token",
+    "description": ""
   },
   "options": {
     "draftAndPublish": false
   },
   "pluginOptions": {},
   "attributes": {
-    "Token": {
+    "token": {
       "type": "string",
       "required": true
     },
-    "User": {
+    "user": {
       "type": "string",
+      "required": true
+    },
+    "used": {
+      "type": "boolean",
+      "default": false,
       "required": true
     }
   }

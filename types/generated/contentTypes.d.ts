@@ -681,7 +681,9 @@ export interface ApiDirectoryDirectory extends Struct.CollectionTypeSchema {
   };
   attributes: {
     display_name: Schema.Attribute.String & Schema.Attribute.Required;
-    directory_path: Schema.Attribute.String & Schema.Attribute.Required;
+    directory_path: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Private;
     anime_episodes: Schema.Attribute.Relation<
       'oneToMany',
       'api::anime-episode.anime-episode'

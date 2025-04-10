@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "shared_medias",
+  "info": {
+    "singularName": "shared-media",
+    "pluralName": "shared-medias",
+    "displayName": "A - Shared Media"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "display_name": {
+      "type": "string",
+      "required": true
+    },
+    "type_of_media": {
+      "type": "enumeration",
+      "enum": [
+        "videojuego",
+        "pelicula",
+        "anime",
+        "serie",
+        "juego de rol",
+        "juego de mesa",
+        "libro",
+        "viaje",
+        "otro (aclarar)"
+      ],
+      "required": true,
+      "default": "otro (aclarar)"
+    },
+    "begin": {
+      "type": "date"
+    },
+    "finish": {
+      "type": "date"
+    },
+    "is_pending": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}

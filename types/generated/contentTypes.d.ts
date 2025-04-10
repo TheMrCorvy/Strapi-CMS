@@ -745,6 +745,55 @@ export interface ApiRegisterTokenRegisterToken
   };
 }
 
+export interface ApiSharedMediaSharedMedia extends Struct.CollectionTypeSchema {
+  collectionName: 'shared_medias';
+  info: {
+    displayName: 'A - Shared Media';
+    pluralName: 'shared-medias';
+    singularName: 'shared-media';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    begin: Schema.Attribute.Date;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text;
+    display_name: Schema.Attribute.String & Schema.Attribute.Required;
+    finish: Schema.Attribute.Date;
+    is_pending: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<true>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::shared-media.shared-media'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    type_of_media: Schema.Attribute.Enumeration<
+      [
+        'videojuego',
+        'pelicula',
+        'anime',
+        'serie',
+        'juego de rol',
+        'juego de mesa',
+        'libro',
+        'viaje',
+        'otro (aclarar)',
+      ]
+    > &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'otro (aclarar)'>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiTimeLineTimeLine extends Struct.CollectionTypeSchema {
   collectionName: 'time_lines';
   info: {
@@ -1351,6 +1400,7 @@ declare module '@strapi/strapi' {
       'api::franchise.franchise': ApiFranchiseFranchise;
       'api::jurisdiction.jurisdiction': ApiJurisdictionJurisdiction;
       'api::register-token.register-token': ApiRegisterTokenRegisterToken;
+      'api::shared-media.shared-media': ApiSharedMediaSharedMedia;
       'api::time-line.time-line': ApiTimeLineTimeLine;
       'api::world.world': ApiWorldWorld;
       'plugin::content-releases.release': PluginContentReleasesRelease;

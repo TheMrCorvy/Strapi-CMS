@@ -1,0 +1,55 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+build/
+dist/
+.strapi-updater.json
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Database
+*.tmp
+.tmp
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE - Don't format these as they contain user-specific settings
+# .vscode
+.idea
+
+# Misc
+*.tgz
+*.tar.gz
+
+# Cache
+.cache/
+.parcel-cache/
+
+# Strapi
+.strapi/
+public/uploads/*
+!public/uploads/.gitkeep
+
+# Environment files
+.env*
+!.env.example
+
+# Generated files
+coverage/
+*.d.ts
+
+# Lock files
+package-lock.json
+yarn.lock

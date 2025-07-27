@@ -19,7 +19,8 @@
     "directory_path": {
       "type": "string",
       "required": true,
-      "private": true
+      "private": true,
+      "unique": true
     },
     "anime_episodes": {
       "type": "relation",

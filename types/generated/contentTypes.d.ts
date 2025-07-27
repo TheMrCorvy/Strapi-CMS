@@ -386,7 +386,9 @@ export interface ApiAnimeEpisodeAnimeEpisode
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     display_name: Schema.Attribute.String & Schema.Attribute.Required;
-    file_path: Schema.Attribute.String & Schema.Attribute.Required;
+    file_path: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -582,7 +584,8 @@ export interface ApiDirectoryDirectory extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     directory_path: Schema.Attribute.String &
       Schema.Attribute.Required &
-      Schema.Attribute.Private;
+      Schema.Attribute.Private &
+      Schema.Attribute.Unique;
     display_name: Schema.Attribute.String & Schema.Attribute.Required;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<

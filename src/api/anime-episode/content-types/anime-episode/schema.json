@@ -18,7 +18,8 @@
     },
     "file_path": {
       "type": "string",
-      "required": true
+      "required": true,
+      "unique": true
     },
     "parent_directory": {
       "type": "relation",

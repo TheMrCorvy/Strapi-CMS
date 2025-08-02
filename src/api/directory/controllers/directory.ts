@@ -89,19 +89,37 @@ export default factories.createCoreController(
                 }
 
                 const updatedDirectories = [];
+                const errors = [];
 
                 for (const updateData of data) {
                     if (!updateData.id) {
-                        return ctx.badRequest(
-                            'Each update item must have an id'
-                        );
+                        errors.push({
+                            item: updateData,
+                            error: 'Each update item must have an id',
+                        });
+                        continue;
                     }
 
                     try {
+                        // First check if the directory exists
+                        const existingDirectory =
+                            await strapi.entityService.findOne(
+                                'api::directory.directory',
+                                updateData.id
+                            );
+
+                        if (!existingDirectory) {
+                            errors.push({
+                                id: updateData.id,
+                                error: `Directory with id ${updateData.id} not found`,
+                            });
+                            continue;
+                        }
+
                         // Prepare update data
                         const dataToUpdate: any = {};
 
-                        if (updateData.display_name) {
+                        if (updateData.display_name !== undefined) {
                             dataToUpdate.display_name = updateData.display_name;
                         }
 
@@ -123,9 +141,11 @@ export default factories.createCoreController(
                                         updateData.parent_directory
                                     );
                                 if (!parentExists) {
-                                    return ctx.badRequest(
-                                        `Parent directory with id ${updateData.parent_directory} not found`
-                                    );
+                                    errors.push({
+                                        id: updateData.id,
+                                        error: `Parent directory with id ${updateData.parent_directory} not found`,
+                                    });
+                                    continue;
                                 }
                                 dataToUpdate.parent_directory =
                                     updateData.parent_directory;
@@ -133,27 +153,45 @@ export default factories.createCoreController(
                         }
 
                         // Handle sub directories relationship
-                        if (
-                            updateData.sub_directories &&
-                            Array.isArray(updateData.sub_directories)
-                        ) {
-                            // Verify all sub directories exist
-                            for (const subDirId of updateData.sub_directories) {
-                                const subDirExists =
-                                    await strapi.entityService.findOne(
+                        if (updateData.sub_directories !== undefined) {
+                            if (
+                                updateData.sub_directories === null ||
+                                updateData.sub_directories.length === 0
+                            ) {
+                                dataToUpdate.sub_directories = [];
+                            } else if (
+                                Array.isArray(updateData.sub_directories)
+                            ) {
+                                // Verify all sub directories exist
+                                const subDirIds = updateData.sub_directories;
+                                const existingSubDirs =
+                                    await strapi.entityService.findMany(
                                         'api::directory.directory',
-                                        subDirId
+                                        {
+                                            filters: { id: { $in: subDirIds } },
+                                            fields: ['id'],
+                                        }
                                     );
-                                if (!subDirExists) {
-                                    return ctx.badRequest(
-                                        `Sub directory with id ${subDirId} not found`
-                                    );
+
+                                const foundIds = existingSubDirs.map(
+                                    dir => dir.id
+                                );
+                                const missingIds = subDirIds.filter(
+                                    id => !foundIds.includes(id)
+                                );
+
+                                if (missingIds.length > 0) {
+                                    errors.push({
+                                        id: updateData.id,
+                                        error: `Sub directories with ids [${missingIds.join(', ')}] not found`,
+                                    });
+                                    continue;
                                 }
+                                dataToUpdate.sub_directories = subDirIds;
                             }
-                            dataToUpdate.sub_directories =
-                                updateData.sub_directories;
                         }
 
+                        // Update the directory
                         const directory = await strapi.entityService.update(
                             'api::directory.directory',
                             updateData.id,
@@ -169,21 +207,31 @@ export default factories.createCoreController(
 
                         updatedDirectories.push(directory);
                     } catch (error) {
-                        if (error.message.includes('not found')) {
-                            return ctx.notFound(
-                                `Directory with id ${updateData.id} not found`
-                            );
-                        }
-                        throw error;
+                        strapi.log.error(
+                            `Error updating directory ${updateData.id}:`,
+                            error
+                        );
+                        errors.push({
+                            id: updateData.id,
+                            error: error.message || 'Unknown error occurred',
+                        });
                     }
                 }
 
-                ctx.body = {
+                const response: any = {
                     data: updatedDirectories,
                     meta: {
                         count: updatedDirectories.length,
+                        total: data.length,
+                        errors: errors.length,
                     },
                 };
+
+                if (errors.length > 0) {
+                    response.errors = errors;
+                }
+
+                ctx.body = response;
             } catch (error) {
                 strapi.log.error('Bulk update directories error:', error);
                 return ctx.internalServerError(

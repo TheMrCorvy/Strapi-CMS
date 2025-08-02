@@ -1,16 +1,13 @@
-/**
- * directory router
- */
-
-import { factories } from '@strapi/strapi';
-
-const coreRouter = factories.createCoreRouter('api::directory.directory');
-
 const customRoutes = [
     {
         method: 'POST',
         path: '/directories/bulk',
         handler: 'directory.bulkCreate',
+    },
+    {
+        method: 'GET',
+        path: '/directories/all',
+        handler: 'directory.findAll',
     },
     {
         method: 'PATCH',

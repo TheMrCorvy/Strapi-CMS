@@ -239,5 +239,15 @@ export default factories.createCoreController(
                 );
             }
         },
+        async findAll(ctx) {
+            try {
+                const directories = await strapi.entityService.findMany('api::directory.directory', {
+                    limit: Number.MAX_SAFE_INTEGER,
+                });
+                ctx.body = directories;
+            } catch (error) {
+                ctx.internalServerError('Failed to fetch directories');
+            }
+        },
     })
 );

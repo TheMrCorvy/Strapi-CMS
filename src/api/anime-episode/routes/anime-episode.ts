@@ -15,6 +15,11 @@ const customRoutes = [
         handler: 'anime-episode.bulkCreate',
     },
     {
+        method: 'GET',
+        path: '/anime-episodes/all',
+        handler: 'anime-episode.findAll',
+    },
+    {
         method: 'PATCH',
         path: '/anime-episodes/bulk',
         handler: 'anime-episode.bulkUpdate',

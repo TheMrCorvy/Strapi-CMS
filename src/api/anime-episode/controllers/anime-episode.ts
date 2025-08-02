@@ -89,19 +89,37 @@ export default factories.createCoreController(
                 }
 
                 const updatedAnimeEpisodes = [];
+                const errors = [];
 
                 for (const updateData of data) {
                     if (!updateData.id) {
-                        return ctx.badRequest(
-                            'Each update item must have an id'
-                        );
+                        errors.push({
+                            item: updateData,
+                            error: 'Each update item must have an id',
+                        });
+                        continue;
                     }
 
                     try {
+                        // First check if the anime episode exists
+                        const existingEpisode =
+                            await strapi.entityService.findOne(
+                                'api::anime-episode.anime-episode',
+                                updateData.id
+                            );
+
+                        if (!existingEpisode) {
+                            errors.push({
+                                id: updateData.id,
+                                error: `Anime episode with id ${updateData.id} not found`,
+                            });
+                            continue;
+                        }
+
                         // Prepare update data
                         const dataToUpdate: any = {};
 
-                        if (updateData.display_name) {
+                        if (updateData.display_name !== undefined) {
                             dataToUpdate.display_name = updateData.display_name;
                         }
 
@@ -119,15 +137,18 @@ export default factories.createCoreController(
                                         updateData.parent_directory
                                     );
                                 if (!parentExists) {
-                                    return ctx.badRequest(
-                                        `Parent directory with id ${updateData.parent_directory} not found`
-                                    );
+                                    errors.push({
+                                        id: updateData.id,
+                                        error: `Parent directory with id ${updateData.parent_directory} not found`,
+                                    });
+                                    continue;
                                 }
                                 dataToUpdate.parent_directory =
                                     updateData.parent_directory;
                             }
                         }
 
+                        // Update the anime episode
                         const animeEpisode = await strapi.entityService.update(
                             'api::anime-episode.anime-episode',
                             updateData.id,
@@ -139,21 +160,31 @@ export default factories.createCoreController(
 
                         updatedAnimeEpisodes.push(animeEpisode);
                     } catch (error) {
-                        if (error.message.includes('not found')) {
-                            return ctx.notFound(
-                                `Anime episode with id ${updateData.id} not found`
-                            );
-                        }
-                        throw error;
+                        strapi.log.error(
+                            `Error updating anime episode ${updateData.id}:`,
+                            error
+                        );
+                        errors.push({
+                            id: updateData.id,
+                            error: error.message || 'Unknown error occurred',
+                        });
                     }
                 }
 
-                ctx.body = {
+                const response: any = {
                     data: updatedAnimeEpisodes,
                     meta: {
                         count: updatedAnimeEpisodes.length,
+                        total: data.length,
+                        errors: errors.length,
                     },
                 };
+
+                if (errors.length > 0) {
+                    response.errors = errors;
+                }
+
+                ctx.body = response;
             } catch (error) {
                 strapi.log.error('Bulk update anime episodes error:', error);
                 return ctx.internalServerError(

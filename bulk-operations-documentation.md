@@ -225,6 +225,46 @@ All endpoints include comprehensive error handling:
 - **409 Conflict**: Unique constraint violations (duplicate paths/files)
 - **500 Internal Server Error**: Unexpected server errors
 
+### Improved Bulk Update Error Handling
+
+The bulk update endpoints now include enhanced error handling:
+
+- **Individual Item Processing**: Each item in the bulk update is processed independently
+- **Partial Success**: Updates that succeed are returned even if some items fail
+- **Detailed Error Reporting**: Failed items are reported with specific error messages
+- **Error Summary**: Response includes error count and details in the meta section
+
+#### Response Format with Errors
+
+When some items fail during bulk update, the response includes both successful updates and error details:
+
+```json
+{
+  "data": [
+    {
+      "id": 1,
+      "display_name": "Successfully Updated Directory",
+      "updatedAt": "2025-01-15T10:05:00.000Z"
+    }
+  ],
+  "meta": {
+    "count": 1,
+    "total": 3,
+    "errors": 2
+  },
+  "errors": [
+    {
+      "id": 2,
+      "error": "Directory with id 2 not found"
+    },
+    {
+      "id": 3,
+      "error": "Parent directory with id 999 not found"
+    }
+  ]
+}
+```
+
 ## Performance Considerations
 
 - These endpoints process items sequentially to ensure data integrity

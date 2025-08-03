@@ -241,9 +241,14 @@ export default factories.createCoreController(
         },
         async findAll(ctx) {
             try {
-                const directories = await strapi.entityService.findMany('api::directory.directory', {
-                    limit: Number.MAX_SAFE_INTEGER,
-                });
+                const { query } = ctx;
+                const directories = await strapi.entityService.findMany(
+                    'api::directory.directory',
+                    {
+                        limit: Number.MAX_SAFE_INTEGER,
+                        populate: query.populate,
+                    }
+                );
                 ctx.body = directories;
             } catch (error) {
                 ctx.internalServerError('Failed to fetch directories');

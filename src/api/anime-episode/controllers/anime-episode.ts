@@ -194,9 +194,14 @@ export default factories.createCoreController(
         },
         async findAll(ctx) {
             try {
-                const episodes = await strapi.entityService.findMany('api::anime-episode.anime-episode', {
-                    limit: Number.MAX_SAFE_INTEGER,
-                });
+                const { query } = ctx;
+                const episodes = await strapi.entityService.findMany(
+                    'api::anime-episode.anime-episode',
+                    {
+                        limit: Number.MAX_SAFE_INTEGER,
+                        populate: query.populate,
+                    }
+                );
                 ctx.body = episodes;
             } catch (error) {
                 ctx.internalServerError('Failed to fetch episodes');

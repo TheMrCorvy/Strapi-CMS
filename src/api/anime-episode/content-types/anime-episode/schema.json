@@ -13,11 +13,11 @@
   "pluginOptions": {},
   "attributes": {
     "display_name": {
-      "type": "string",
+      "type": "text",
       "required": true
     },
     "file_path": {
-      "type": "string",
+      "type": "text",
       "required": true,
       "unique": true
     },

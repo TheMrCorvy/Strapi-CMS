@@ -401,8 +401,8 @@ export interface ApiAnimeEpisodeAnimeEpisode
         createdAt: Schema.Attribute.DateTime;
         createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
             Schema.Attribute.Private;
-        display_name: Schema.Attribute.String & Schema.Attribute.Required;
-        file_path: Schema.Attribute.String &
+        display_name: Schema.Attribute.Text & Schema.Attribute.Required;
+        file_path: Schema.Attribute.Text &
             Schema.Attribute.Required &
             Schema.Attribute.Unique;
         locale: Schema.Attribute.String & Schema.Attribute.Private;
@@ -604,11 +604,11 @@ export interface ApiDirectoryDirectory extends Struct.CollectionTypeSchema {
         createdAt: Schema.Attribute.DateTime;
         createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
             Schema.Attribute.Private;
-        directory_path: Schema.Attribute.String &
+        directory_path: Schema.Attribute.Text &
             Schema.Attribute.Required &
             Schema.Attribute.Private &
             Schema.Attribute.Unique;
-        display_name: Schema.Attribute.String & Schema.Attribute.Required;
+        display_name: Schema.Attribute.Text & Schema.Attribute.Required;
         locale: Schema.Attribute.String & Schema.Attribute.Private;
         localizations: Schema.Attribute.Relation<
             'oneToMany',

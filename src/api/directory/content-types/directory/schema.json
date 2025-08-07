@@ -13,13 +13,13 @@
   "pluginOptions": {},
   "attributes": {
     "display_name": {
-      "type": "string",
+      "type": "text",
       "required": true
     },
     "directory_path": {
-      "type": "string",
-      "required": true,
+      "type": "text",
       "private": true,
+      "required": true,
       "unique": true
     },
     "anime_episodes": {

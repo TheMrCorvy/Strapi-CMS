@@ -249,7 +249,12 @@ export default factories.createCoreController(
                         populate: query.populate,
                     }
                 );
-                ctx.body = directories;
+                ctx.body = {
+                    data: directories,
+                    meta: {
+                        count: directories.length,
+                    },
+                };
             } catch (error) {
                 ctx.internalServerError('Failed to fetch directories');
             }

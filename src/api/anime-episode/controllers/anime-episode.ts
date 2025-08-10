@@ -202,7 +202,12 @@ export default factories.createCoreController(
                         populate: query.populate,
                     }
                 );
-                ctx.body = episodes;
+                ctx.body = {
+                    data: episodes,
+                    meta: {
+                        count: episodes.length,
+                    },
+                };
             } catch (error) {
                 ctx.internalServerError('Failed to fetch episodes');
             }
